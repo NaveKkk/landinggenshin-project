@@ -1,0 +1,31 @@
+/* Глобальні налаштування з твого старого CSS */
+body {
+    background: linear-gradient(#0b0f2a, #020412) !important;
+    color: #e6e9ff;
+    font-family: Arial, sans-serif;
+    padding-top: 70px;
+    min-height: 100vh;
+}
+
+/* Навігація */
+.navbar {
+    background: rgba(0,0,0,0.4) !important;
+    backdrop-filter: blur(10px);
+}
+
+/* Активний пункт меню */
+.nav-link.active-link {
+    color: #0dcaf0 !important;
+    font-weight: bold;
+    text-shadow: 0 0 8px rgba(13, 202, 240, 0.8);
+    border-bottom: 2px solid #0dcaf0;
+    transition: all 0.3s ease;
+}
+
+/* Загальний стиль для секцій */
+.section-block {
+    margin-top: 60px;
+    padding: 30px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 15px;
+}
