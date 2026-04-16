@@ -8,8 +8,10 @@ const app = express();
 const PORT = process.env.PORT || 3000; 
 
 // --- Налаштування мідлварів ---
-app.use(cors()); 
-app.use(express.json()); 
+app.use(cors({
+    origin: 'https://laba-2-genshin.onrender.com' // Адреса твого фронтенду
+}));
+app.use(express.json());
 
 // --- Підключення до бази даних SQLite ---
 const dbPath = path.resolve(__dirname, 'genshin.db');
