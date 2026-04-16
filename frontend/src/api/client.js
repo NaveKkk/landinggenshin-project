@@ -1,18 +1,15 @@
 import axios from 'axios';
 
 /**
- * Рівень 1, п.1: Створення централізованого клієнта axios
- * дозволяє налаштувати базову URL-адресу в одному місці.
+ * Рівень 1, п.1: Централізований клієнт axios.
+ * Змінюємо localhost на реальну адресу бекенду на Render.
  */
 const client = axios.create({
-    baseURL: 'http://localhost:3000/api', // Адреса твого Node.js сервера
-    timeout: 5000, // Тайм-аут запиту (5 секунд)
+    // Вказуємо адресу твого розгорнутого бекенду
+    baseURL: 'https://laba-1-genshin.onrender.com/api', 
+    timeout: 10000, // Збільшимо до 10 сек, бо безкоштовні сервери Render можуть "засинати"
 });
 
-/**
- * Інтерцептори (теоретичні відомості): 
- * Можна додати обробку помилок для всіх запитів одразу
- */
 client.interceptors.response.use(
     response => response,
     error => {
