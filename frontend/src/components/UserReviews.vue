@@ -63,7 +63,7 @@ const userName = ref('')
 // 1. Завантаження даних - додаємо перевірку структури
 const loadReviews = async () => {
   try {
-    const res = await fetch('http://localhost:3000/api/data')
+    const res = await fetch('https://laba-1-genshin.onrender.com/api/data')
     if (!res.ok) throw new Error("Помилка мережі")
     const data = await res.json()
     
@@ -82,7 +82,7 @@ const sendReview = async () => {
   if (!textToSend) return
 
   try {
-    const response = await fetch('http://localhost:3000/api/reviews', {
+    const response = await fetch('https://laba-1-genshin.onrender.com/api/reviews', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ 
@@ -106,7 +106,7 @@ const deleteReview = async (id) => {
   if (!confirm("Ви впевнені, що хочете видалити цей відгук?")) return
 
   try {
-    const response = await fetch(`http://localhost:3000/api/reviews/${id}`, {
+    const response = await fetch(`https://laba-1-genshin.onrender.com/api/reviews/${id}`, {
       method: 'DELETE'
     })
     
@@ -124,7 +124,7 @@ const deleteReview = async (id) => {
 // 4. Лайки
 const addLike = async (id) => {
   try {
-    const response = await fetch('http://localhost:3000/api/like', {
+    const response = await fetch('https://laba-1-genshin.onrender.com/api/like', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ id, type: 'review' })
